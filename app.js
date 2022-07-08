@@ -13,6 +13,8 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 });
 
-server.listen(5055 || process.env.PORT, () => {
+var port = process.env.PORT || 3000;
+
+server.listen(port, () => {
   console.log('listening on *:5055');
 });
