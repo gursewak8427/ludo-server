@@ -6,15 +6,20 @@ import { Server } from "socket.io";
 const io = new Server(server);
 
 app.get('/', (req, res) => {
-  res.send('hello from ludo server');
+    res.send('hello from ludo server');
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+    console.log('a user connected');
+    
+    io.on('msg', (data) => {
+        print('data from client');
+    });
+
 });
 
 var port = process.env.PORT || 3000;
 
 server.listen(port, () => {
-  console.log(`listening on ${port}`);
+    console.log(`listening on ${port}`);
 });
