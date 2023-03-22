@@ -207,6 +207,9 @@ io.on('connection', (socket) => {
 });
 
 const PORT = process.env.PORT || 5052
-server.listen(PORT, '192.168.134.91', () => {
-    console.log('listening on 192.168.134.91:%d', PORT);
+server.listen(PORT, () => {
+    console.log('listening on ', PORT);
 });
+// server.listen(PORT, '192.168.134.91', () => {
+//     console.log('listening on 192.168.134.91:%d', PORT);
+// });
